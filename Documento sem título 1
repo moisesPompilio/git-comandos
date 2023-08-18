@@ -1,0 +1,30 @@
+COMNADOS GIT:
+
+ - git rebase <nome da branch>    junta duas branches, deixando teus commits a cima dos commits da banch que ta sendo juntada, e se o comando fosse merge ele junta por ordem cronologica de commit
+
+  - git log   mostra os logs do commits(basicamente mostra a arvore de commits da branch)
+
+  - git reset --hard <id da ação que quer voltar>  serve para voce voltar para uma etapa da arvore, exemplo fez um rebase que não era para ser feito, basta fazer e reflog pegar o id para onde que você quer voltar
+
+ - git reflog     ele exibi a arvore de alteração do git permite ver o commit e ações feitas como o rebase
+
+
+ - git config --global --edit   configuração do git
+  exemplo de configuração
+	[core]
+		editor = code --wait 	# editor de texto, nesse caso VsCode
+	[user]
+		name = <user name>   # colocar o user name pricipal que você usa
+		email = <user email> # colocar o user email pricipal que você usa
+	[alias] # escrever atalhos do git
+		r = !git rebase
+		ri = !git rebase -i
+
+
+  - git rebase -i <nome da branch>   ativa o modo interativo do rebase permite que o faça modificação dos commits como ordem na arvore, renome commit e remover commit, os commits serão exibido ate a brach selecionada, caso não queira fazer por branch pode usar o HEAD~<quantidade de commit para voltar> no git rebase vão ter comandos mais usados:
+  normalmente os commits vão esta com p/pickup então você pode trocar pelas tags em baixo para fazer uma das operações listada.
+  .  r/reword <commit> alterar a mensagem do commit
+  .  d/drop <commit> remove o commit
+  .  s/squash <commit> junta o commit com seu antecessor e abrirar uma janela para editar a mensagem do commit
+  .  f/fixup <commit> junta o commit com seu antecessor e mensagem do commit vai ser do primeiro commit
+  .  e/edit <commit> editar um commit. ele vai ativar um modo em que voce fica no  commit caso voce queira desfazer o commit basta fazer git reset HEAD^  assim ele desfazer o commits e os arquivos vão esta pronto fazer um no commit para eles, ideal para separar arquivos que foram comitados junto, depois que fazer tudo, basta fazer git rebase --continue que ele vai sair do modo interativo do edit
