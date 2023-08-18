@@ -28,3 +28,9 @@ COMNADOS GIT:
   .  s/squash <commit> junta o commit com seu antecessor e abrirar uma janela para editar a mensagem do commit
   .  f/fixup <commit> junta o commit com seu antecessor e mensagem do commit vai ser do primeiro commit
   .  e/edit <commit> editar um commit. ele vai ativar um modo em que voce fica no  commit caso voce queira desfazer o commit basta fazer git reset HEAD^  assim ele desfazer o commits e os arquivos vão esta pronto fazer um no commit para eles, ideal para separar arquivos que foram comitados junto, depois que fazer tudo, basta fazer git rebase --continue que ele vai sair do modo interativo do edit
+
+
+
+
+
+caso esteja usando a versão interativa pelo terminal use ctrl+x para sair ctrl+o para salvar, quando aperta para salver ele mostrar um caminho onde vai ser salvo o caminho so aperta ENTER para ele salvar
